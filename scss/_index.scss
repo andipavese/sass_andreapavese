@@ -1,0 +1,98 @@
+body{
+    background-color: $primary-color;
+    color: $text-color;
+    
+    nav{
+        height: 10vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        ul {
+            list-style: none;
+            display: flex;
+            li {
+                margin-right: 2.5rem;
+                a {
+                    text-decoration: none;
+                    color: grey;
+                    &:hover{
+                        color: red;
+                    }
+                }
+            }
+
+        }
+    }
+    .titulo__principal {
+       background-color:$secundary-color;
+       color: $text-color;
+       padding: 10px;
+       margin-bottom: 30px;
+
+       
+    }
+
+    .content {
+        @include flexCenter(column);
+        width: 80%;
+        margin: 0 auto;
+      
+        &__paragraph--intro {
+          font-weight: map-get($font-weights, bold);
+      
+          &:hover {
+            color: yellow;
+          }
+        }
+        &__paragraph {
+            @extend .content__paragraph--intro;
+        
+            &:hover {
+              color: red;
+            }
+        }    
+    }  
+    
+    .tittle {
+        @include flexCenter(column);
+        width: 80%;
+        margin: 0 auto;
+        color: $secundary-color;
+        margin-top: 60px
+    }
+    .tittle--2 {
+        @include flexCenter(column);
+        width: 80%;
+        margin: 0 auto;
+        color: $secundary-color;
+        margin-top: 20px
+    }
+    .text {
+        @include flexCenter(column);
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 30px;
+        color: $secundary-color;
+      
+        &:hover {
+          color: rgb(0, 255, 98);
+        }
+    }
+    button {
+        @include flexCenter(column);
+        width: 10%;
+        margin: 0 auto;
+        margin-top: 30px;
+        color: $primary-color;
+        border: 2px solid $primary-color;
+    }
+     /*funciona como una media query*/
+    @include mobile {
+    flex-direction: row;
+    }
+    .light {
+        @include theme(false);
+    }
+
+}    
